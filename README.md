@@ -1,2 +1,4 @@
-# WS_Shoes
-Repo for Jonah, Albert, Varun Deep &amp; Vishal
+# Wearable Sensor Project (Foot-Print)
+
+
+Firebase hosting has been stopped for this project
