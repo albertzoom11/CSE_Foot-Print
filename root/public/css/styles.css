@@ -1,0 +1,151 @@
+html {
+    scroll-behavior: smooth;
+    background-color: aquamarine;
+}
+
+h1 {
+    font-family: 'Righteous', cursive;
+}
+
+h2 {
+    font-family: 'Righteous', cursive;
+}
+
+h3 {
+    font-family: 'Jost', sans-serif;
+}
+
+h4 {
+    font-family: 'Jost', sans-serif;
+}
+
+h5 {
+    font-family: 'Jost', sans-serif;
+}
+
+h6 {
+    font-family: 'Jost', sans-serif;
+}
+
+p {
+    font-family: 'Jost', sans-serif;
+}
+
+nav {
+    background-color: #66cf9e;
+    height: 64px;
+    overflow: hidden;
+}
+
+.nav-right {
+    float: right !important;
+}
+
+a {
+    font-family: 'Jost', sans-serif;
+}
+
+a.current {
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 64px;
+}
+
+li {
+    text-align: left;
+    padding: 5px;
+}
+
+#ToC {
+    text-align: center;
+}
+
+/* Column container */
+.row {  
+    display: flex;
+    justify-content: space-between;
+    height: 0vh;
+    width: 100%;
+    /* overflow: hidden; */
+}
+  
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    text-align: center;
+    background-color: aquamarine;
+    padding: 20px;
+    height: 90vh;
+    width: 350px;
+    float: left;
+}
+  
+/* Main column */
+.main {
+    background-color: #d1fffb;
+    text-align: center;
+    height: 90vh;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+/* sidebyside row */
+.sidebyside {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+/* left cell of sidebyside */
+.left {
+    padding: 20px;
+    width: 50%;
+}
+
+/* right cell of sidebyside */
+.right {
+    padding: 20px;
+    width: 50%;
+}
+
+#list {
+    display: flex;
+    justify-content: center;
+}
+
+#reasons {
+    height: 500px;
+}
+
+#heatmapContainerWrapper {
+    width: 64vh;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url(../pics/feet.svg);
+    margin: 0 auto;
+}
+
+#heatmapContainer {
+    height: 100%;
+    width: 100%;
+}
+
+#heatmapButtons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#heatmapButtons button {
+    background-color: aquamarine;
+    color: black;
+}
+
+.click-icon {
+    cursor: pointer;
+}

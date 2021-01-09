@@ -1,0 +1,299 @@
+<!-- Importing Materialize -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- import stylesheet-->
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+        <!-- title on top of tab -->
+        <title>Foot-Print</title>
+
+        <!-- shorcut icon -->
+        <link rel="shortcut icon" type="image/png" href="../pics/shoes.png">
+
+        <!-- Import fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;800&family=Righteous&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <!-- nav bar with id "nav" -->
+            <nav id='nav'>
+                <ul>
+                    <!-- The "current" class is used to higlight the current page on the nav bar -->
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="current" href="howToUse.html">How to Use</a>
+                    </li>
+                    <li>
+                        <a href="reasons.html">Reasons to Use</a>
+                    </li>
+                    <li class="logged-in">
+                        <a href="heatMap.html" id="heatmapNav">Heat Map</a>
+                    </li>
+                </ul>
+                
+                <ul class="nav-right">
+                    <li class="logged-in">
+                        <a href="#" class="modal-trigger" data-target="modal-create">Create Entry</a>
+                    </li>
+                    <li class="logged-in">
+                        <a href="#" class="modal-trigger" data-target="modal-account">Account</a>
+                    </li>
+                    <li class="logged-in">
+                        <a href="#" id="logoutNav">Log Out</a>
+                    </li>
+                    <li class="logged-out">
+                        <a href="#" class="modal-trigger" data-target="modal-login" id="loginNav">Log In</a>
+                    </li>
+                    <li class="logged-out">
+                        <a href="#" class="modal-trigger" data-target="modal-signup" id="signupNav">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Sign Up Modal -->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <h4>Sign up</h4><br />
+                <form id="signup-form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id="signup-name" required />
+                        <label for="signup-name">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">mail</i>
+                        <input type="email" id="signup-email" required />
+                        <label for="signup-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" id="signup-password" required />
+                        <label for="signup-password">Choose password</label>
+                    </div>
+                    <button class="btn darken-2 z-depth-0">Sign up</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Log In Modal -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+                <h4>Login</h4><br />
+                <form id="login-form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">mail</i>
+                        <input type="email" id="login-email" required />
+                        <label for="login-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" id="login-password" required />
+                        <label for="login-password">Your password</label>
+                    </div>
+                    <button class="btn darken-2 z-depth-0">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Account Modal -->
+        <div id="modal-account" class="modal">
+            <div class="modal-content center-align">
+            <h4>Account Details</h4><br />
+            <div class="account-details"></div>
+            <div class="account-extras"></div>
+            </div>
+        </div>
+
+        <!-- Create Entry Modal -->
+        <div id="modal-create" class="modal">
+            <div class="modal-content">
+            <h4>Create Entry</h4><br />
+            <form id="create-form">
+                <div class="input-field">
+                    <i class="material-icons prefix">event</i>
+                    <input type="date" id="date" required>
+                    <label for="date">Date</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightBall" required>
+                    <label for="rightBall">Right Foot Ball Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightArchFront" required>
+                    <label for="rightArchFront">Right Foot Front Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightArchBack" required>
+                    <label for="rightArchBack">Right Foot Back Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightHeel" required>
+                    <label for="rightHeel">Right Foot Heel Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftBall" required>
+                    <label for="leftBall">Left Foot Ball Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftArchFront" required>
+                    <label for="leftArchFront">Left Foot Front Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftArchBack" required>
+                    <label for="leftArchBack">Left Foot Back Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftHeel" required>
+                    <label for="leftHeel">Left Foot Heel Force</label>
+                </div>
+                <button class="btn darken-2 z-depth-0">Create</button>
+            </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- left side column -->
+            <div class="side">
+                <!-- import music note logo image -->
+                <img src="../pics/stomp.png" alt="logo" width="180" height="108">
+                <br>
+                <!-- Table of Contents (unordered list) -->
+                <h5>Table of Contents:</h5>
+                <ul>
+                    <!-- Table of Contents Options with links to appropriate div -->
+                    <li id="ToC"><a href="#top">How to Use</a></li>
+                    <li id="ToC"><a href="#howToVideo">Website Walkthrough</a></li>
+                    <li id="ToC"><a href="#procedure">Procedure</a></li>
+                    <li id="ToC"><a href="#bottom">Bottom</a></li>
+                </ul>
+            </div>
+            <div class="main">
+                <!-- right side (main) column -->
+                <div id="top">
+                    <!-- id for top of the page jump -->
+                    <br>
+                    <h1>How to Use</h1>
+                </div>
+                <!-- slider (currently with sample images) -->
+                <div class="slider">
+                    <ul class="slides">
+                    <li>
+                        <img src = "../pics/insoles.jpg" alt="">
+                        <div class="caption center-align black-text">
+                        <h3>Insert the Foot-Print Insole</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <img src = "../pics/wideRun.jpg">
+                        <div class="caption center-align black-text">
+                        <h3>Go For a Run or Walk</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <img src = "../pics/wideComputer.jpg" alt="">
+                        <div class="caption center-align black-text">
+                        <h3>Track Your Data With Live Updating</h3>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+
+                <br>
+                <div id="howToVideo">
+                    <br>
+                    <h2>Website Walkthrough</h2>
+                    <br>
+                    <iframe width="800" height="450" src="https://www.youtube.com/embed/pamLq6XPbyA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br>
+                </div>
+                
+                <div id="procedure">
+                    <br>
+                    <h2>Procedure</h2>
+                    <h5>
+                        <div id="list">
+                            <ol>
+                                <li>Unbox product, which contains shoe insoles (two) of specified size and plastic boxes (two) that have wires. 
+                                    Each plastic box is wired to one sole and two velcro strips with adhesive on the back of the strips</li>
+                                <li>Open the back of both plastic boxes.</li>
+                                <li>Insert the CR2032 coin batteries into the backs of each plastic box.</li>
+                                <li>Close the backs of both plastic boxes.</li>
+                                <li>Adhere the velcro strips to the sides of each shoe, with one velcro strip to one shoe.</li>
+                                <li>Stick each plastic box to its designated velcro strip (the plastic box that has the sole for the right foot should attach 
+                                    itself to the velcro strip on the right shoe, and vice versa for the plastic box that has the sole for the left foot).</li>
+                                <li>Insert each insole into its respective shoe.</li>
+                                <li>Turn on the soles with the switches on the plastic boxes.</li>
+                                <li>Sign up on the website.</li>
+                                <li>Put the shoes on (with the soles in them).</li>
+                                <li>Engage in running.</li>
+                                <li>Observe the results on the app at the conclusion of the run: including a heat map and feedback from the app.</li>
+                                <li>Feedback from the app will tell whether one is putting too much pressure on the bridge, ball, pinky side, or heel of the foot. 
+                                    If there are no issues, the app will suggest no changes. This information will be reinforced in the heatmap provided in the app.</li>
+                                <li>From the feedback received from the website, adjust one’s running technique to take force off of the specified overstressed area. 
+                                    For example, if one is putting too much force on the ball or pinky side, then try to strike with the heel of the foot more. </li>
+                            </ol>
+                        </div>
+                    </h5>
+                </div>
+                <div id="bottom"></div>
+            </div>
+        </div>
+        <!-- import jquery -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCmvs9m-dXkMfvD2ZDQxmyRaaeXe-KOuw4",
+                authDomain: "wearable-sensor.firebaseapp.com",
+                databaseURL: "https://wearable-sensor.firebaseio.com",
+                projectId: "wearable-sensor",
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // make auth and firestore references
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+        </script>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="../js/materialize.min.js"></script>
+        <script type="text/javascript" src="../js/auth.js"></script>
+        <script type="text/javascript" src="../js/index.js"></script>
+        
+        <!-- run slider -->
+        <script>
+            $(document).ready(function(){
+            // initialize Carousel
+            $('.slider').slider();
+            });
+        </script>
+    </body>
+</html>

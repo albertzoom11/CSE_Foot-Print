@@ -1,0 +1,298 @@
+<!-- Importing Materialize -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- import stylesheet-->
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+        <!-- title on top of tab -->
+        <title>Foot-Print</title>
+
+        <!-- shorcut icon -->
+        <link rel="shortcut icon" type="image/png" href="../pics/shoes.png">
+
+        <!-- Import fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;800&family=Righteous&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <!-- nav bar with id "nav" -->
+            <nav id='nav'>
+                <!-- unordered list for the nav bar -->
+                <ul>
+                    <!-- The "current" class is used to higlight the current page on the nav bar -->
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="howToUse.html">How to Use</a>
+                    </li>
+                    <li>
+                        <a href="reasons.html">Reasons to Use</a>
+                    </li>
+                    <li class="logged-in">
+                        <a class="current" href="heatMap.html" id="heatmapNav">Heat Map</a>
+                    </li>
+                </ul>
+                
+                <ul class="nav-right">
+                    <li class="logged-in">
+                        <a href="#" class="modal-trigger" data-target="modal-create">Create Entry</a>
+                    </li>
+                    <li class="logged-in">
+                        <a href="#" class="modal-trigger" data-target="modal-account">Account</a>
+                    </li>
+                    <li class="logged-in">
+                        <a href="#" id="logoutNav">Log Out</a>
+                    </li>
+                    <li class="logged-out">
+                        <a href="#" class="modal-trigger" data-target="modal-login" id="loginNav">Log In</a>
+                    </li>
+                    <li class="logged-out">
+                        <a href="#" class="modal-trigger" data-target="modal-signup" id="signupNav">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Sign Up Modal -->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <h4>Sign up</h4><br />
+                <form id="signup-form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id="signup-name" required />
+                        <label for="signup-name">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">mail</i>
+                        <input type="email" id="signup-email" required />
+                        <label for="signup-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" id="signup-password" required />
+                        <label for="signup-password">Choose password</label>
+                    </div>
+                    <button class="btn darken-2 z-depth-0">Sign up</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Log In Modal -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+                <h4>Login</h4><br />
+                <form id="login-form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">mail</i>
+                        <input type="email" id="login-email" required />
+                        <label for="login-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" id="login-password" required />
+                        <label for="login-password">Your password</label>
+                    </div>
+                    <button class="btn darken-2 z-depth-0">Login</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Account Modal -->
+        <div id="modal-account" class="modal">
+            <div class="modal-content center-align">
+            <h4>Account Details</h4><br />
+            <div class="account-details"></div>
+            <div class="account-extras"></div>
+            </div>
+        </div>
+
+        <!-- Deletify Modal -->
+        <div id="modal-deletify" class="modal">
+            <div class="modal-content center-align">
+            <h4>Delete Heat Map Entry</h4><br />
+            <h6>Are you sure you want to delete?<br>This entry will be permanantly deleted.</h6>
+            <form id="deletify-form">
+                <div class="modal-footer">
+                    <button class="btn darken-2 z-depth-0" onclick="deleete()">Yes</button>
+                    <button class="btn darken-2 z-depth-0">No</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+        <!-- Create Entry Modal -->
+        <div id="modal-create" class="modal">
+            <div class="modal-content">
+            <h4>Create Entry</h4><br />
+            <form id="create-form">
+                <div class="input-field">
+                    <i class="material-icons prefix">event</i>
+                    <input type="date" id="date" required>
+                    <label for="date">Date</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightBall" required>
+                    <label for="rightBall">Right Foot Ball Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightArchFront" required>
+                    <label for="rightArchFront">Right Foot Front Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightArchBack" required>
+                    <label for="rightArchBack">Right Foot Back Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="rightHeel" required>
+                    <label for="rightHeel">Right Foot Heel Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftBall" required>
+                    <label for="leftBall">Left Foot Ball Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftArchFront" required>
+                    <label for="leftArchFront">Left Foot Front Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftArchBack" required>
+                    <label for="leftArchBack">Left Foot Back Arch Force</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_run</i>
+                    <input type="text" id="leftHeel" required>
+                    <label for="leftHeel">Left Foot Heel Force</label>
+                </div>
+                <button class="btn darken-2 z-depth-0">Create</button>
+            </form>
+            </div>
+        </div>
+
+        <div class="row" id="heatmapBody">
+            <!-- left side column -->
+            <div class="side">
+                <!-- import music note logo image -->
+                <img src="../pics/stomp.png" alt="logo" width="180" height="108">
+                <br>
+                <!-- Table of Contents (unordered list) -->
+                <h5>Table of Contents:</h5>
+                <ul>
+                    <!-- Table of Contents Options with links to appropriate div -->
+                    <li id="ToC"><a href="#top">Back To Top</a></li>
+                    <li id="ToC"><a href="#instructions">Instructions</a></li>
+                    <li id="ToC"><a href="#heatmapContainerWrapperBig">Heat Map</a></li>
+                    <li id="ToC"><a href="#heatmapJournal">Journal</a></li>
+                </ul>
+            </div>
+            <div class="main">
+                <!-- right side (main) column -->
+                <div id="top">
+                    <!-- id for top of the page jump -->
+                    <br>
+                    <h1>Heat Map</h1>
+                    <h4>A live-updating heat map paired with user feedback and an interactive journal to store running form data.</h4>
+                </div>
+                <br>
+                <div id="instructions" class="container" style="margin-top: 40px;">
+                    <br><br>
+                    <ul class="collapsible popout z-depth-0" style="border: none;">
+                        <li>
+                            <div class="collapsible-header waves-effect waves-light teal accent-3">
+                                <h2 style="margin: 0 auto;">Instructions</h2>
+                            </div>
+                            <div class="collapsible-body teal accent-1">
+                                <h5>
+                                    This is where you can see all of your past entries. 
+                                    With the use of the Foot-Print smart sole, your entries will automatically appear at the bottom of the screen. 
+                                    To manually add an entry to your log, click “Create Entry” at the top of right of the screen. 
+                                    After entering in the date and all of the force values, click “Create”. 
+                                    You will now be able to view your new entry with all of the others at the bottom of the screen.
+                                    <br><br>
+                                    To see more details about a certain entry, just click on its row in the table. 
+                                    This will display the heatmap showing the distribution of force across your foot. 
+                                    It will also show you the individual force values in case you want to see more precise information than what the heatmap can show.
+                                    <br><br>
+                                    In addition to the data itself, you will be able to see feedback on your running form so that you can prevent long-term injuries. 
+                                    You will see feedback on your front-back weight distribution, as well as whether or not you are running too flat-footed.
+                                    <br>
+                                </h5>
+                                <p class="red-text">
+                                    <br>
+                                    *Note: When reading the heatmap, blue means the least amount of force and red means the highest in that specific entry. 
+                                    Red does not mean you are putting too much weight on that spot. It only means it is more force than other areas of the foot. 
+                                    For feedback on your form, use the message under the heatmap.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="heatmapContainerWrapperBig">
+                    <br>
+                    <div id="heatmapContainerWrapper" style="width: 64vh;">
+                        <!-- canvas for use with heatmap.js -->
+                        <div id="heatmapContainer"></div>
+                    </div>
+                    <div id="userFeedbackContainer">
+                        <br>
+                        <p id="leftUserFeedback"></p>
+                        <p id="rightUserFeedback"></p>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <button class="btn waves-effect waves-light teal accent-3 z-depth-0" onclick="clearFootprint()"><h6 class="black-text">Reset</h6></button>
+                </div>
+
+                <!-- Heatmap Journal -->
+                <div class="container" style="margin-top: 40px;">
+                    <ul class="collapsible popout z-depth-0 footprintLogs" id="heatmapJournal" style="border: none;">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- import jquery -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/7.15.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+        <script src="/__/firebase/7.15.0/firebase-firestore.js"></script>
+        
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+        <script>
+            // make auth and firestore references
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+            </script>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="../js/materialize.min.js"></script>
+        <script type="text/javascript" src="../js/auth.js"></script>
+        <script type="text/javascript" src="../js/index.js"></script>
+
+        <!-- import heatmap library and heatmap js file -->
+        <script type="text/javascript" src="../heatmap/build/heatmap.js"></script>
+        <script type="text/javascript" src="../js/heatMap.js"></script>
+    </body>
+</html>
